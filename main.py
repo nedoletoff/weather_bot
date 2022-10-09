@@ -11,4 +11,8 @@ def start_message(message):
     bot.send_message(message.chat.id, "Hello")
 
 
-bot.infinity_polling()
+try:
+    bot.infinity_polling()
+except BaseException:
+    with open("./error.txt") as file:
+        file.write(BaseException)
